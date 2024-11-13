@@ -9,7 +9,7 @@ class ProfileScreen extends StatefulWidget{
 
 class _ProfileScreenState extends State<ProfileScreen> {
   //TODO: 1. deklarasikan variabel yg dibutuhkan
-  bool isiSignedIn = false;
+  bool isSignedIn = false;
   String fullName = 'shella';
   String userName = 'la';
   int favoriteCandiCount = 0;
@@ -17,7 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   //TODO: 5. Implementasi fungsi sign in
   void signIn(){
     setState(() {
-      isiSignedIn = !isiSignedIn;
+      isSignedIn = !isSignedIn;
     });
   }
 
@@ -25,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   //TODO: 6. Implementasu fungsi sign out
   void signOut(){
     setState(() {
-      isiSignedIn = !isiSignedIn;
+      isSignedIn = !isSignedIn;
     });
   }
 
@@ -63,7 +63,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               AssetImage('images/placeholder_image.png'),
                           ),
                         ),
-                        if(isiSignedIn)
+                        if(isSignedIn)
                         IconButton(
                           onPressed: (){}, 
                           icon: Icon(
@@ -156,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: TextStyle(fontSize: 18),
                       )
                     ),
-                    if(isiSignedIn) const Icon(Icons.edit),
+                    if(isSignedIn) const Icon(Icons.edit),
                   ],
                 ),
 
@@ -212,7 +212,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                isiSignedIn 
+                isSignedIn 
                 ? TextButton(
                   onPressed: signOut, child: const Text('Sign Out'))
                 : TextButton(onPressed: signIn, child: const Text('Sign In'))
